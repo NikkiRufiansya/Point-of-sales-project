@@ -69,7 +69,7 @@
                             @if(session('success'))
                                <x-alert> 
                                     <x-slot name='type'>
-                                        danger
+                                        sucsess
                                     </x-slot>
                                     {!! session('sucsess') !!}
                                 </x-alert>
@@ -94,7 +94,7 @@
                                             <td>{{ $row->description }}</td>
                                             <td>
                                                 <form action="{{ route('kategori.destroy', $row->id) }}" method="POST">
-                                                {{ csrf_field() }}
+                                                {{ csrf_field()}}
                                                     <input type="hidden" name="_method" value="DELETE">
                                                     <a href="{{ route('kategori.edit', $row->id) }}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
                                                     <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
