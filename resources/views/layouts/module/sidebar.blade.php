@@ -20,6 +20,20 @@
 ​
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-item has-treeview">
+                <a class="nav-link" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                    <i class="nav-icon fa fa-sign-out"></i>
+                    <p>
+                        {{ __('Logout') }}
+                    </p>
+                </a>
+            ​
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ @csrf_field() }}
+                </form>
+            </li>
                 <li class="nav-item has-treeview menu-open">
                     <a href="#" class="nav-link active">
                         <i class="nav-icon fa fa-dashboard"></i>
@@ -29,6 +43,7 @@
                         </p>
                     </a>
                 </li>
+                
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-server"></i>
